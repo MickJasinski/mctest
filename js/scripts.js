@@ -4,8 +4,21 @@ $(document).ready(function () {
   // 'Burger' button's toggle function 
   $(".burger").click(function () {
     $(".mobile-nav").toggleClass("active", 600);
-  })
+  });
 
+  $('a[href^="#"]').on('click', function (e) {
+    e.preventDefault();
+    
+    var target = this.hash; 
+    var $target = $(target);
+
+    $('html, body').animate({
+      'scrollTop': $target.offset().top
+    }, 1000, 'swing', function() {
+      window.location.hash = target;
+    });
+  });
+  
   // Add more scripts here
 
 });
@@ -38,7 +51,7 @@ TxtRotate.prototype.tick = function () {
   this.el.innerHTML = '<span class="wrap">' + '&nbsp' + this.txt + '</span>';
 
   var that = this;
-  var delta = 300 - Math.random() * 100;
+  var delta = 200 - Math.random() * 100;
 
   if (this.isDeleting) { delta /= 2; }
 
@@ -48,7 +61,7 @@ TxtRotate.prototype.tick = function () {
   } else if (this.isDeleting && this.txt === '') {
     this.isDeleting = false;
     this.loopNum++;
-    delta = 500;
+    delta = 300;
   }
 
   setTimeout(function () {
