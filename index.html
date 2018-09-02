@@ -12,45 +12,66 @@
 </head>
 
 <body class="container-fluid">
-  
+
   <div class="navbar">
-    <div class="logo">
-      <img src="" alt=""  />
-      <!-- desktop navigation -->
-      <div class="desktop-nav">
-        <ul>
-          <li><a href="#home">Home</a></li>
-          <li><a href="#services">Services</a></li>
-          <li><a href="#lifecycle">Lifecycle</a></li>
-          <li><a href="Contact">Contact</a></li>
-        </ul>  
-      </div>
-    
-      <!-- mobile navigation -->
-      <button class="burger"><p>&#9776;</p></button>
-      <div class="mobile-nav">
-        <ul>
-          <li><a href="#home">Home</a></li>
-          <li><a href="#services">Services</a></li>
-          <li><a href="#lifecycle">Lifecycle</a></li>
-          <li><a href="Contact">Contact</a></li>
-        </ul>
-      </div>
+    <div class="logo"></div>
+    <img src="" alt="" />
+    <!-- desktop navigation -->
+    <div class="desktop-nav">
+      <ul>
+        <li>
+          <a href="#home">Home</a>
+        </li>
+        <li>
+          <a href="#services" class="arrow" >Services</a>
+        </li>
+        <li>
+          <a href="#lifecycle">Lifecycle</a>
+        </li>
+        <li>
+          <a href="Contact">Contact</a>
+        </li>
+      </ul>
     </div>
+
+    <!-- mobile navigation -->
+    <button class="burger">
+      <p>&#9776;</p>
+    </button>
+    <div class="mobile-nav">
+      <ul>
+        <li class="delay-1">
+          <a href="#home">Home</a>
+        </li>
+        <li class="delay-2">
+          <a href="#services">Services</a>
+        </li>
+        <li class="delay-3">
+          <a href="#lifecycle">Lifecycle</a>
+        </li>
+        <li class="delay-4">
+          <a href="Contact">Contact</a>
+        </li>
+      </ul>
+    </div>
+
   </div>
 
   <div id="home">
     <div class="hometop">
       <div class="typing">
-        <h1>Hello, I'm<span
-            class="txt-rotate"
-            data-period="2000"
-            data-rotate='[ "Mick.","designer.", "developer.", "at your service!" ]'> 
-          </span>
-        </h1>
+        <h1>Hello, I'm<span class="txt-rotate" data-period="2000" data-rotate='[ "Mick.","designer.", "developer.", "at your service!" ]'></span></h1>
       </div>
     </div>
   </div>
+
+<div id="services" class="screen">
+  <div id="space">
+    <div class="textbox tb-1" data-aos="fade-right"><h1>Space</h1></div>
+    <div class="textbox tb-2" data-aos="fade-left"><h1>of</h1></div>
+    <div class="textbox tb-3" data-aos="fade-right"><h1>possibilities</h1></div>
+  </div>
+</div>
 
   <!-- scripts -->
   <script src="lib/jquery.min.js"></script>
@@ -59,8 +80,8 @@
   <script src="bootstrap/bootstrap.min.js"></script>
   <script src="aos/aos.js"></script>
   <script>
-      AOS.init();
-    </script>
+    AOS.init();
+  </script>
   <script src="js/scripts.js"></script>
 
 </body>
