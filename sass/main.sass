@@ -1,0 +1,153 @@
+// Variables
+
+$link: #767676
+$linkH: #bbb
+$text: #333
+
+$dark: #424242
+$darkL: #676767
+$light: #f8f8f8
+$lite: #eee
+
+$trans: rgba(240,240,240,.96)
+$transBlack: rgba(0,0,0,.5)
+
+
+// Global settings
+*
+    margin: 0
+    padding: 0
+
+a
+    transition: .3s ease
+
+a:link, a:visited
+    text-decoration: none
+    color: $link
+
+a:hover
+    color: #bbb
+
+ul li 
+    list-style: none
+
+
+.screen 
+    height: 100vh
+
+
+// Navigation - desktop
+.desktop-nav
+    display: block
+    text-align: right
+    margin-bottom: 30px
+    padding-top: 10px
+    position: relative
+    left: 20px
+    ul
+        margin: 0
+        padding: 0
+        li
+            display: inline
+            list-style: none
+            transition: .3s ease
+            a 
+                display: inline-block
+                border: 1px solid white
+                border-radius: 2px
+                padding: 5px 20px
+                margin-left: 2px
+                text-transform: uppercase
+                color: $text
+            a:last-od-type
+                padding-right: none
+                margin-left: none
+        li:hover a
+            background: $light
+            color: $text
+            text-decoration: none
+        .current-menu-item a, .current-menu-item a:hover
+            color: $linkH
+    ul:before, ul:after
+        content: ""
+        display: table
+    ul:after
+        clear: both
+
+
+// Navigation - mobile
+.burger, .mobile-nav
+        display: none
+
+@media (max-width: 996px)
+
+    .mobile-nav
+        display: block
+        position: fixed
+        top: 0
+        right: -260px
+        width: 260px
+        height: 100%
+        background: $trans
+        // box-shadow: 0 10px 16px #aaa
+        transition: .3s ease
+        overflow: visible
+        z-index: 1000
+        h3
+            text-align: center
+            padding-top: 60px
+        ul
+            margin: 0 
+            padding: 20px 0
+            text-align: center
+            
+            li 
+                display: block
+                width: 70%
+                margin: 0 auto
+                padding: 20px
+                color: $dark
+                border-bottom: 1px solid $linkH
+                text-transform: uppercase
+                a
+                    text-decoration: none
+                    
+            li:last-of-type
+                border-bottom: none
+
+
+    .social-box
+        display: flex
+        justify-content: center
+        .social
+            position: block
+            margin: 10px
+            display: block
+            object-fit: cover
+            object-position: center
+            width: 60px
+
+    .active
+        right: 0
+
+    .desktop-nav
+        display: none
+    .burger
+        display: block
+        position: fixed
+        top: 26px
+        right: 12px
+        line-height: 30px
+        font-size: 2em
+        padding: 0
+        box-sizing: border-box
+        cursor: pointer
+        background: none
+        border: none
+        text-shadow: 0 2px 0 white
+        z-index: 10000
+        p
+            padding: 0
+            margin: 0
+            position: relative
+            top: -1px
