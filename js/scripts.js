@@ -1,11 +1,7 @@
-//jQuery
+//////// jQuery
 $(document).ready(function () {
 
-  // 'Burger' button's toggle function 
-  $(".burger").click(function () {
-    $(".mobile-nav").toggleClass("active", 600);
-  });
-
+  // Scroll to ID
   $('a[href^="#"]').on('click', function (e) {
     e.preventDefault();
     
@@ -18,6 +14,23 @@ $(document).ready(function () {
       window.location.hash = target;
     });
   });
+
+  // Sticky Navbar
+  var navY = $('.navbar').offset().top;
+  var stickyNavbar = function() {
+    var scrollY = $(window).scrollTop();
+    if (scrollY > navY) {
+      $('.navbar').addClass('sticky');
+    } else {
+      $('.navbar').removeClass('sticky');
+    }
+  };
+
+  stickyNavbar();
+  $(window).scroll(function() {
+    stickyNavbar();
+  });
+  
   
   // Add more scripts here
 
@@ -25,7 +38,7 @@ $(document).ready(function () {
 
 
 
-// Vanilla
+//////// Vanilla
 
 // -- typing
 var TxtRotate = function (el, toRotate, period) {
