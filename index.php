@@ -1,4 +1,26 @@
 <!DOCTYPE html>
+<?php error_reporting(0);
+
+if(isset($_POST['submit'])){
+  $name = htmlspecialchars(stripslashes(trim($_POST['name'])));
+  $subject = htmlspecialchars(stripslashes(trim($_POST['subject'])));
+  $email = htmlspecialchars(stripslashes(trim($_POST['email'])));
+  $message = htmlspecialchars(stripslashes(trim($_POST['message'])));
+  if(!preg_match("/^[A-Za-z .'-]+$/", $name)){
+    $name_error = 'Invalid name';
+  }
+  if(!preg_match("/^[A-Za-z .'-]+$/", $subject)){
+    $subject_error = 'Invalid subject';
+  }
+  if(!preg_match("/^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,4}$/", $email)){
+    $email_error = 'Invalid email';
+  }
+  if(strlen($message) === 0){
+    $message_error = 'Your message should not be empty';
+  }
+}
+
+?>
 <html lang="en">
 
 <head>
@@ -35,27 +57,6 @@
         </li>
       </ul>
     </div>
-
-    <!-- mobile navigation -->
-    <!-- <button class="burger">
-      <p>&#9776;</p>
-    </button>
-    <div class="mobile-nav">
-      <ul>
-        <li class="delay-1">
-          <a href="#home">Home</a>
-        </li>
-        <li class="delay-2">
-          <a href="#services">Services</a>
-        </li>
-        <li class="delay-3">
-          <a href="#lifecycle">Lifecycle</a>
-        </li>
-        <li class="delay-4">
-          <a href="Contact">Contact</a>
-        </li>
-      </ul>
-    </div> -->
 
   </div>
 
@@ -220,7 +221,36 @@
     </div>
   </div>
 
-  <div id="contact" class="screen"></div>
+  <div id="contact" class="screen">
+
+    <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="POST">
+      <label for="name">Name:</label><br>
+      <input type="text" name="name">
+      <p><?php if(isset($name_error)) echo $name_error; ?></p>
+      <label for="subject">Subject:</label><br>
+      <input type="text" name="subject">
+      <p><?php if(isset($subject_error)) echo $subject_error; ?></p>
+      <label for="email">Email:</label><br>
+      <input type="text" name="email">
+      <p><?php if(isset($email_error)) echo $email_error; ?></p>
+      <label for="message">Message:</label><br>
+      <textarea name="message"></textarea>
+      <p><?php if(isset($message_error)) echo $message_error; ?></p>
+      <input type="submit" name="submit" value="Submit">
+      <?php 
+        if(isset($_POST['submit']) && !isset($name_error) && !isset($subject_error) && !isset($email_error) && !isset($message_error)){
+          $to = 'youremail@addres.com'; // edit here
+          $body = " Name: $name\n E-mail: $email\n Message:\n $message";
+          if(mail($to, $subject, $body)){
+            echo '<p style="color: green">Message sent</p>';
+          }else{
+            echo '<p>Error occurred, please try again later</p>';
+          }
+        }
+      ?>
+    </form>
+
+  </div>
 
   <!-- scripts -->
   <script src="lib/jquery.min.js"></script>
