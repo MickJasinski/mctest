@@ -16,6 +16,7 @@
   },
   "license": "ISC",
   "dependencies": {
+    "hoek": "^6.0.1",
     "node-sass": "^4.9.0",
     "particles.js": "^2.0.0",
     "slick-carousel": "^1.8.1"
