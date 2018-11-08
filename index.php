@@ -23,16 +23,16 @@
     <div class="desktop-nav">
       <ul>
         <li>
-          <a href="#home"><img src="icons/home.svg" alt="Home" style="filter:url(#dropshadow)"></a>
+          <a href="#home"><img src="imgs/home.svg" alt="Home" style="filter:url(#dropshadow)" id="home-icon"></a>
         </li>
         <li>
-          <a href="#services" class="arrow"><img src="icons/info.svg" alt="What I do?" style="filter:url(#dropshadow)"></a>
+          <a href="#services" class="arrow"><img src="imgs/info.svg" alt="What I do?" style="filter:url(#dropshadow)"></a>
         </li>
         <li>
-          <a href="#lifecycle"><img src="icons/cycle.svg" alt="Project lifecycle" style="filter:url(#dropshadow)"></a>
+          <a href="#lifecycle"><img src="imgs/cycle.svg" alt="Project lifecycle" style="filter:url(#dropshadow)"></a>
         </li>
         <li>
-          <a href="#contact"><img class="mail" src="icons/mail.svg" alt="Contact" style="filter:url(#dropshadow)"></a>
+          <a href="#contact"><img class="mail" src="imgs/postbox.svg" alt="Contact" style="filter:url(#dropshadow)" id="contact-icon"></a>
         </li>
       </ul>
     </div>
@@ -63,19 +63,19 @@
     <div class="container">
       <div class="servicebox halfscreen row">
         <div class="serviceH col-sm-12 col-lg-4" data-aos="fade-left" data-aos-delay="200" data-aos-easing="ease-out">
-          <img src="icons/design.svg" alt="Design">
+          <img src="imgs/design.svg" alt="Design">
           <h2>DESIGN</h2>
           <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quia quisquam laborum illo cum, magni harum aut ad
             reiciendis. In quos incidunt provident.</p>
         </div>
         <div class="serviceH col-sm-12 col-lg-4" data-aos="fade-left" data-aos-delay="400" data-aos-easing="ease-out">
-          <img src="icons/development.svg" alt="Design">
+          <img src="imgs/development.svg" alt="Design">
           <h2>DEVELOPMENT</h2>
           <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quia quisquam laborum illo cum, magni harum aut ad
             reiciendis. In quos incidunt provident.</p>
         </div>
         <div class="serviceH col-sm-12 col-lg-4" data-aos="fade-left" data-aos-delay="600" data-aos-easing="ease-out">
-          <img src="icons/deployment.svg" alt="Design">
+          <img src="imgs/deployment.svg" alt="Design">
           <h2>DEPLOYMENT</h2>
           <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quia quisquam laborum illo cum, magni harum aut ad
             reiciendis. In quos incidunt provident.</p>
